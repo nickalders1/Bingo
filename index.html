@@ -1,1 +1,58 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bingo Card</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      width: 120px;
+      height: 120px;
+      text-align: center;
+      vertical-align: middle;
+      border: 2px solid #333;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: white;
+    }
+    td.clicked {
+      background-color: #90ee90;
+    }
+  </style>
+</head>
+<body>
+  <table id="bingo">
+    <tbody>
+      <script>
+        const items = [
+          "Task 1", "Task 2", "Task 3", "Task 4", "Task 5",
+          "Task 6", "Task 7", "Task 8", "Task 9", "Task 10",
+          "Task 11", "Task 12", "I haven't changed anything", "Task 13", "Task 14",
+          "Task 15", "Task 16", "Task 17", "Task 18", "Task 19",
+          "Task 20", "Task 21", "Task 22", "Task 23", "Task 24"
+        ];
+        
+        for (let row = 0; row < 5; row++) {
+          document.write("<tr>");
+          for (let col = 0; col < 5; col++) {
+            const index = row * 5 + col;
+            document.write(`<td onclick="this.classList.toggle('clicked')">${items[index]}</td>`);
+          }
+          document.write("</tr>");
+        }
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
